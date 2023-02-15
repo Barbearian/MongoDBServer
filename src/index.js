@@ -127,12 +127,12 @@ async function ReadDocuments(data,res){
             var rs = await databaseUtil.FindDocuments(dbName,collectionName,documentFilter);
             res.send(rs);
         }else{
-            res.sendStatus(400);
+            res.send(data);
         }
         
     } catch (error) {
         console.log(error);
-        res.sendStatus(400);
+        res.send(data);
     }
 }
 
