@@ -36,7 +36,7 @@ async function main(){
             listDatabases(res);
         });
 
-        app.get("/ReadDocuments",(req,res)=>{
+        app.post("/ReadDocuments",(req,res)=>{
             console.log("receive req:");
             console.log(req.body);
             ReadDocuments(req.body,res);
