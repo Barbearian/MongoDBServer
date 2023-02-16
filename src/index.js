@@ -5,6 +5,7 @@ const server = http.createServer(app);
 const bodyParser = require("body-parser");
 
 const databaseUtil = require("./databaseUtil");
+const { debug } = require('console');
 app.use(bodyParser.json());
 
 
@@ -36,6 +37,8 @@ async function main(){
         });
 
         app.get("/ReadDocuments",(req,res)=>{
+            console.log("receive req:");
+            console.log(req);
             ReadDocuments(req.body,res);
         });
 
