@@ -36,7 +36,7 @@ async function main(){
             listDatabases(res);
         });
 
-        app.post("/ReadDocuments",(req,res)=>{
+        app.get("/ReadDocuments",(req,res)=>{
             console.log("receive req:");
             console.log(req.body);
             ReadDocuments(req.body,res);
@@ -67,6 +67,9 @@ async function CreateDocuments(data,res){
         var documents = data.documents;
     
         if(dbName && collectionName && documents){
+
+            if(documents)
+
             var rs = await databaseUtil.CreateDocuments(dbName,collectionName,documents);
             res.send(rs);
         }else{
