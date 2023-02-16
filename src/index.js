@@ -36,7 +36,7 @@ async function main(){
         });
 
         app.get("/ReadDocuments",(req,res)=>{
-            ReadDocuments(req.body,res);
+            ReadDocuments(req.query,res);
         });
 
         
