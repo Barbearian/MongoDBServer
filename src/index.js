@@ -38,7 +38,7 @@ async function main(){
 
         app.get("/ReadDocuments",(req,res)=>{
             console.log("receive req:");
-            console.log(req);
+            console.log(req.body);
             ReadDocuments(req.body,res);
         });
 
